@@ -1,9 +1,14 @@
 package com.examen.sismo.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +19,9 @@ import com.examen.sismo.entity.request.ConsultaDosFechasRequest;
 import com.examen.sismo.entity.request.ConsultaMagnitudRequest;
 import com.examen.sismo.response.Result;
 import com.examen.sismo.service.ConsultaSismoService;
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 
 @RestController
 public class SismoController {
@@ -49,6 +57,27 @@ public class SismoController {
 		resultados = consultaSismoService.consultaCuatroFechas(consultaCuantroFechasRequest);			
 		return resultados;
 	
+	}
+	
+	private String getJWTToken(String username) {
+		String secretKey = "sismosGlobalLogic";
+		List<GrantedAuthority> grantedAuthorities = AuthorityUtils
+				.commaSeparatedStringToAuthorityList("ROLE_USER");
+		
+		String token = Jwts
+				.builder()
+				.setId("softtekJWT")
+				.setSubject(username)
+				.claim("authorities",
+						grantedAuthorities.stream()
+								.map(GrantedAuthority::getAuthority)
+								.collect(Collectors.toList()))
+				.setIssuedAt(new Date(System.currentTimeMillis()))
+				.setExpiration(new Date(System.currentTimeMillis() + 800000))
+				.signWith(SignatureAlgorithm.HS512,
+						secretKey.getBytes()).compact();
+
+		return "Sismos " + token;	
 	}
 
 }
