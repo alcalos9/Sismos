@@ -90,6 +90,7 @@ _Tecnologías y herramientas utilizadas:_
 * Spring Tool Suite 4
 * Gradle
 * JWT
+* Framework Spock (instalado pero no implementado)
 * Postman (donde fueron probados y consultados los endpoint)
 
 
