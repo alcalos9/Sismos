@@ -1,6 +1,6 @@
 # Sismos
 
-_Acá va un párrafo que describa lo que es el proyecto_
+_Evaluación Java, la cual sonsiste en crear EndPoint que entreguen la información de sismos obtenidas desde la libreria "https://earthquake.usgs.gov/fdsnws/event/1"_
 
 ## Comenzando 🚀
 
