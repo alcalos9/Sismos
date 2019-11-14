@@ -11,7 +11,7 @@ Una vez descargado se debe abrir el IDE Spring Tool Suite 4, identificar el work
 
 ### EndPoints
 
-El primer endpoint de user, es utilizado para generar el token (JWT) que utilizaran y validaran los demás servicios. El user y password ustiliados no se validan, por lo que se puede utilizar cualquier valor para ellos.
+El primer endpoint de user, es utilizado para generar el token (JWT) que utilizaran y validaran los demás servicios. El user y password utiliados no se validan, por lo que se puede utilizar cualquier valor.
 #### Ruta: 
 _http://localhost:8080/consultaDosFechas_
 #### HEADER:
