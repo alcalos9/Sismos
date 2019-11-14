@@ -15,4 +15,6 @@ public interface ConsultaSismoService {
 
 	List<Result> consultaCuatroFechas(ConsultaCuantroFechasRequest consultaCuantroFechasRequest);
 
+	List<Result> consultaSismosOctubre();
+
 }

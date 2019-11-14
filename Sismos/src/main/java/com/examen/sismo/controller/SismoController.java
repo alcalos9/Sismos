@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.examen.sismo.entity.request.ConsultaCuantroFechasRequest;
@@ -20,6 +22,7 @@ import com.examen.sismo.entity.request.ConsultaMagnitudRequest;
 import com.examen.sismo.response.Result;
 import com.examen.sismo.service.ConsultaSismoService;
 
+import com.examen.sismo.dto.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -57,6 +60,26 @@ public class SismoController {
 		resultados = consultaSismoService.consultaCuatroFechas(consultaCuantroFechasRequest);			
 		return resultados;
 	
+	}
+	
+	@RequestMapping(value = "/consultaSismosOctubre", method = RequestMethod.POST)
+	public List<Result> consultaSismosOctubre(){
+
+		List<Result> resultados = new ArrayList<Result>();	
+		resultados = consultaSismoService.consultaSismosOctubre();			
+		return resultados;
+	
+	}
+	
+	@PostMapping("user")
+	public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
+		
+		String token = getJWTToken(username);
+		User user = new User();
+		user.setUser(username);
+		user.setToken(token);		
+		return user;
+		
 	}
 	
 	private String getJWTToken(String username) {
