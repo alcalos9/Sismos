@@ -14,7 +14,6 @@ Una vez descargado se debe abrir el IDE Spring Tool Suite 4, identificar el work
 _http://localhost:8080/consultaDosFechas_
 #### HEADER:
 Content-Type:application/json
-
 Authorization:Sismos eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiYWxlIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTU3MzcyNzI0NywiZXhwIjoxNTczNzI4MDQ3fQ.dZw64gdWKW0oabJrV6OhtBpdX-P3q3-DndD2JnRUGwqDnW3TSiAtfC8rovzmdM8sxc-u-y-F0Bvu4m1hXoyH3w
 #### BODY:
 _{
