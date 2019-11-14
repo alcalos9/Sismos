@@ -10,11 +10,12 @@ Lo único necesario para comenzar el proyecto es descargarlo o clonarlo desde es
 Una vez descargado se debe abrir el IDE Spring Tool Suite 4, identificar el workspace requerido e importar el proyecto. También, desde el IDE se puede asociar en la opción "Team" (desde un nuevo proyecto) al repositorio git y descargar ahí el proyecto.
 
 ### EndPoints
-_Ruta: http://localhost:8080/consultaDosFechas_
-_HEADER:_
+#### Ruta: 
+_http://localhost:8080/consultaDosFechas_
+#### HEADER:
 _Content-Type:application/json
 Authorization:Sismos eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoiYWxlIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTU3MzcyNzI0NywiZXhwIjoxNTczNzI4MDQ3fQ.dZw64gdWKW0oabJrV6OhtBpdX-P3q3-DndD2JnRUGwqDnW3TSiAtfC8rovzmdM8sxc-u-y-F0Bvu4m1hXoyH3w_
-_BODY:_
+#### BODY:
 _{
 	"fechaInicioR1":"2019-10-13",
 	"fechaTerminoR1":"2019-10-14"
