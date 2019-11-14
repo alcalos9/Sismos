@@ -17,9 +17,8 @@ _http://localhost:8080/consultaDosFechas_
 #### HEADER:
 
 #### BODY:
-_user:sismos
-
-password:sismo_
+user:sismos
+password:sismo
 
 
 Los siguientes son los endpoint solicitados:
@@ -34,7 +33,7 @@ _{
 	"fechaInicioR1":"2019-10-13",
 	"fechaTerminoR1":"2019-10-14"
 }_
-
+---------------------------------------------------------
 
 #### Ruta: 
 _http://localhost:8080/consultaMagnitudes_
@@ -49,6 +48,7 @@ _{
 	"maxMagnitude":"666"
 }_
 
+---------------------------------------------------------
 
 #### Ruta: 
 _http://localhost:8080/consultaCuatroFechas_
@@ -64,6 +64,7 @@ _{
 	"fechaTerminoR2":"444"
 }_
 
+---------------------------------------------------------
 
 #### Ruta: 
 _http://localhost:8080/consultaSismosOctubre_
